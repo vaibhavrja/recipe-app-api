@@ -5,6 +5,8 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name : cLONE
+        uses: actions/checkout@v2
       - name : Fetch
         id: dotenv
         uses: ./.github/actions/dotenv-action
