@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2.1.1
       - name : Fetch
         id: dotenv
-        uses: ./.github/actions/dotenv-action
+        uses: falti/dotenv-action@v0.2.5
       - name : Print 
         run: echo "${{ steps.dotenv.outputs.name }}"
       - name : Print2
