@@ -1,5 +1,15 @@
 name: build
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      Server:
+        description: 'Server'
+        required: true
+        default: 'Test'
+        type: choice
+        options:
+        - Test
+        - Prod
 jobs:
   testJob:
     name: Test
@@ -11,7 +21,7 @@ jobs:
         id: dotenv
         uses: falti/dotenv-action@v0.2.5
         with:
-          path: Test.env
+          path: ${{ inputs.Server }}.env
       - name : Print 
         run: echo "${{ steps.dotenv.outputs.name }}"
       - name : Print2
