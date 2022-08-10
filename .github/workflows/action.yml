@@ -10,6 +10,8 @@ jobs:
       - name : Fetch
         id: dotenv
         uses: falti/dotenv-action@v0.2.5
+        with:
+          path: Test.env
       - name : Print 
         run: echo "${{ steps.dotenv.outputs.name }}"
       - name : Print2
